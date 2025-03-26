@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বয়কট ইসরায়েল</title>
+    <title>ইসরায়েলি পণ্য বয়কট</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/html5-qrcode" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-
     <header>
-        <div class="flags">
-            <img src="bangladesh.png" alt="বাংলাদেশ" class="flag">
-            <img src="palestine.png" alt="ফিলিস্তিন" class="flag">
-        </div>
-        <h1>ইসরায়েলি পণ্য বয়কট করুন</h1>
-        <input type="text" id="search" placeholder="পণ্য বা কোম্পানি খুঁজুন..." onkeyup="searchProduct()">
+        <img src="bangladesh-flag.png" alt="বাংলাদেশের পতাকা" class="flag">
+        <img src="palestine-flag.png" alt="ফিলিস্তিনের পতাকা" class="flag">
+        <h1>ইসরায়েলি পণ্য বয়কট</h1>
     </header>
 
-    <section id="result"></section>
+    <main>
+        <section id="search-section">
+            <input type="text" id="search-bar" placeholder="পণ্যের নাম লিখুন...">
+            <button onclick="searchProduct()">সার্চ</button>
+        </section>
 
-    <script src="script.js"></script>
+        <section id="barcode-scanner">
+            <h2>বারকোড স্ক্যান করুন</h2>
+            <div id="reader"></div>
+            <div id="barcodeResult"></div>
+        </section>
 
+        <section id="product-result">
+            <!-- পণ্যের তথ্য এখানে প্রদর্শিত হবে -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ইসরায়েলি পণ্য বয়কট</p>
+    </footer>
 </body>
 </html>
