@@ -1,28 +1,32 @@
+const boycottList = [
+    { name: "Coca Cola", img: "cocacola.jpg" },
+    { name: "Nestle", img: "nestle.jpg" },
+    { name: "Intel", img: "intel.jpg" },
+    { name: "McDonald's", img: "mcdonalds.jpg" },
+    { name: "Pepsi", img: "pepsi.jpg" }
+];
 
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const productName = document.getElementById('product-name').value;
+function searchProduct() {
+    let query = document.getElementById("search").value.toLowerCase();
+    let resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "";  
 
-    if (productName) {
-        fetchProductData(productName);
+    let foundProduct = boycottList.find(product => product.name.toLowerCase().includes(query));
+
+    if (foundProduct) {
+        resultDiv.innerHTML = `
+            <div class="product">
+                <img src="${foundProduct.img}" alt="${foundProduct.name}" class="product-img">
+                <h3>${foundProduct.name}</h3>
+                <img src="shoe-mark.png" class="mark">
+            </div>
+        `;
+    } else {
+        resultDiv.innerHTML = `
+            <div class="product">
+                <h3>${query} এই পণ্যটি বয়কট লিস্টে নেই</h3>
+                <img src="check-mark.png" class="mark">
+            </div>
+        `;
     }
-});
-
-function fetchProductData(productName) {
-    const products = [
-        { name: 'McDonald's', boycott: true },
-        { name: 'Coca-Cola', boycott: false },
-        { name: 'Apple', boycott: true },
-    ];
-
-    const productResults = document.getElementById('productResults');
-    productResults.innerHTML = ''; // পুরানো ফলাফল মুছে ফেলুন
-
-    products.forEach(product => {
-        if (product.name.toLowerCase().includes(productName.toLowerCase())) {
-            const li = document.createElement('li');
-            li.textContent = product.name + (product.boycott ? ' (বয়কট)' : ' (অনুমোদিত)');
-            productResults.appendChild(li);
-        }
-    });
 }
