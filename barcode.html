@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বারকোড স্ক্যানার</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <h2>বারকোড স্ক্যান করুন</h2>
+    <div id="reader"></div>
+    <div id="barcodeResult"></div>
+
+    <script>
+        function onScanSuccess(decodedText) {
+            document.getElementById("barcodeResult").innerHTML = `স্ক্যানকৃত বারকোড: ${decodedText}`;
+            searchProduct(decodedText);
+        }
+
+        let scanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+        scanner.render(onScanSuccess);
+    </script>
+
+</body>
+</html>
