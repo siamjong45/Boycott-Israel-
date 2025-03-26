@@ -1,37 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বয়কট পণ্য তালিকা</title>
+    <title>বয়কট ইসরায়েল</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <h1>বয়কট পণ্য তালিকা</h1>
-        <p>এই ওয়েবসাইটে আপনি পণ্য বয়কটের তালিকা দেখতে পারবেন।</p>
+        <div class="flags">
+            <img src="bangladesh.png" alt="বাংলাদেশ" class="flag">
+            <img src="palestine.png" alt="ফিলিস্তিন" class="flag">
+        </div>
+        <h1>ইসরায়েলি পণ্য বয়কট করুন</h1>
+        <input type="text" id="search" placeholder="পণ্য বা কোম্পানি খুঁজুন..." onkeyup="searchProduct()">
     </header>
-    
-    <section id="product-search">
-        <h2>পণ্য অনুসন্ধান করুন</h2>
-        <form id="searchForm">
-            <input type="text" id="product-name" placeholder="পণ্যের নাম লিখুন" required>
-            <button type="submit">অনুসন্ধান</button>
-        </form>
-    </section>
 
-    <section id="product-list">
-        <h2>বয়কট পণ্য</h2>
-        <ul id="productResults">
-            <!-- পণ্যগুলির ফলাফল এখানে প্রদর্শিত হবে -->
-        </ul>
-    </section>
-
-    <footer>
-        <p>© 2025 বয়কট পণ্য তালিকা</p>
-    </footer>
+    <section id="result"></section>
 
     <script src="script.js"></script>
+
 </body>
 </html>
