@@ -1,0 +1,12 @@
+
+{
+  "name": "boycott-website",
+  "version": "1.0.0",
+  "description": "বয়কট পণ্য তালিকা ওয়েবসাইট",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000"
+  },
+  "author": "তোমার নাম",
+  "license": "MIT"
+}
